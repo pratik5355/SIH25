@@ -66,7 +66,7 @@ function MapClickHandler({ onAddIntervention }: { onAddIntervention: (position: 
 export default function MapView({ emissionSources, interventions, gridData, onAddIntervention }: MapContainerProps) {
   const [heatmapVisible, setHeatmapVisible] = useState(true);
   
-  const centerPosition: [number, number] = [40.7550, -73.9840];
+const centerPosition: [number, number] = [18.4489, 73.8263];
   
   const getHeatmapColor = (co2Level: number) => {
     // Color scale based on CO₂ levels

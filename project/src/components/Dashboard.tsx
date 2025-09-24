@@ -102,7 +102,7 @@ export default function Dashboard({ metrics, interventions, sources }: Dashboard
             <p className="text-sm text-emerald-700">Active Interventions</p>
           </div>
           <div className="text-center">
-            <p className="text-3xl font-bold text-emerald-600">${metrics.costEffectiveness}</p>
+            <p className="text-3xl font-bold text-emerald-600">Rs.{metrics.costEffectiveness}</p>
             <p className="text-sm text-emerald-700">Cost per kg CO₂</p>
           </div>
         </div>
@@ -112,21 +112,21 @@ export default function Dashboard({ metrics, interventions, sources }: Dashboard
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <div className="bg-gray-50 p-5 rounded-lg border">
           <h3 className="text-lg font-semibold text-gray-800 mb-4 flex items-center">
-            <DollarSign className="h-5 w-5 mr-2 text-gray-600" />
+            {/* <DollarSign className="h-5 w-5 mr-2 text-gray-600" /> */}
             Financial Overview
           </h3>
           <div className="space-y-3">
             <div className="flex justify-between">
               <span className="text-gray-600">Total Investment</span>
-              <span className="font-semibold">${totalInvestment.toLocaleString()}</span>
+              <span className="font-semibold">Rs.{totalInvestment.toLocaleString()}</span>
             </div>
             <div className="flex justify-between">
               <span className="text-gray-600">Annual Maintenance</span>
-              <span className="font-semibold">${annualMaintenanceCost.toLocaleString()}</span>
+              <span className="font-semibold">Rs.{annualMaintenanceCost.toLocaleString()}</span>
             </div>
             <div className="flex justify-between border-t pt-2">
               <span className="text-gray-800 font-medium">Cost Effectiveness</span>
-              <span className="font-bold text-blue-600">${metrics.costEffectiveness}/kg CO₂</span>
+              <span className="font-bold text-blue-600">Rs.{metrics.costEffectiveness}/kg CO₂</span>
             </div>
           </div>
         </div>
