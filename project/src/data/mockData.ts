@@ -2,80 +2,155 @@ import { EmissionSource, CaptureIntervention, GridCell } from '../types';
 
 // Mock emission sources for a city grid
 export const mockEmissionSources: EmissionSource[] = [
+  // Pune focus
   {
-    id: 'highway-1',
+    id: 'pune-hinjawadi-traffic',
     type: 'transportation',
-    name: 'Highway Interchange',
-    position: [40.7589, -73.9851],
+    name: 'Hinjawadi IT Park Corridor',
+    position: [18.5916, 73.7389],
+    emissionRate: 2000,
+    active: true
+  },
+  {
+    id: 'pune-chakan-industrial',
+    type: 'industrial',
+    name: 'Chakan MIDC Cluster',
+    position: [18.7603, 73.8630],
+    emissionRate: 5200,
+    active: true
+  },
+  {
+    id: 'pune-pcmc-bhosari',
+    type: 'industrial',
+    name: 'PCMC Bhosari Industrial Estate',
+    position: [18.6436, 73.8334],
+    emissionRate: 3800,
+    active: true
+  },
+  {
+    id: 'pune-kharadi-corridor',
+    type: 'transportation',
+    name: 'Kharadi IT Corridor Traffic',
+    position: [18.5510, 73.9436],
+    emissionRate: 1900,
+    active: true
+  },
+  {
+    id: 'pune-magarpatta-commercial',
+    type: 'commercial',
+    name: 'Magarpatta–Hadapsar Commercial District',
+    position: [18.5150, 73.9270],
+    emissionRate: 1200,
+    active: true
+  },
+  {
+    id: 'pune-talegaon-industrial',
+    type: 'industrial',
+    name: 'Talegaon Industrial Area',
+    position: [18.7352, 73.6755],
+    emissionRate: 2600,
+    active: true
+  },
+  {
+    id: 'pune-pcmc-ring-road-traffic',
+    type: 'transportation',
+    name: 'PCMC Spine/Ring Road Traffic',
+    position: [18.6186, 73.8037],
+    emissionRate: 1700,
+    active: true
+  },
+  {
+    id: 'pune-hadapsar-residential',
+    type: 'residential',
+    name: 'Hadapsar Residential Sector',
+    position: [18.5005, 73.9340],
+    emissionRate: 600,
+    active: true
+  },
+
+  // Mumbai anchors for Maharashtra context
+  {
+    id: 'mumbai-expressway-1',
+    type: 'transportation',
+    name: 'Mumbai Western Express Highway',
+    position: [19.1136, 72.8697],
     emissionRate: 2500,
     active: true
   },
   {
-    id: 'power-plant-1',
+    id: 'tps-mumbai',
     type: 'industrial',
-    name: 'Power Generation Facility',
-    position: [40.7505, -73.9934],
+    name: 'Trombay Power Station',
+    position: [19.0200, 72.9100],
     emissionRate: 8000,
-    active: true
-  },
-  {
-    id: 'downtown-traffic',
-    type: 'transportation',
-    name: 'Downtown Traffic Corridor',
-    position: [40.7614, -73.9776],
-    emissionRate: 1800,
-    active: true
-  },
-  {
-    id: 'residential-1',
-    type: 'residential',
-    name: 'Residential District',
-    position: [40.7505, -73.9680],
-    emissionRate: 450,
-    active: true
-  },
-  {
-    id: 'industrial-zone',
-    type: 'industrial',
-    name: 'Manufacturing District',
-    position: [40.7686, -73.9918],
-    emissionRate: 3200,
-    active: true
-  },
-  {
-    id: 'commercial-center',
-    type: 'commercial',
-    name: 'Commercial District',
-    position: [40.7549, -73.9840],
-    emissionRate: 1100,
     active: true
   }
 ];
 
+
+
 export const mockInterventions: CaptureIntervention[] = [
+  // Pune focus
   {
-    id: 'green-wall-1',
-    type: 'vertical-garden',
-    name: 'Vertical Garden System',
-    position: [40.7580, -73.9855],
-    captureRate: 120,
-    cost: 45000,
-    maintenanceCost: 8000,
-    coverage: 200,
+    id: 'pune-chakan-roadside-capture',
+    type: 'roadside-capture',
+    name: 'Chakan CO₂ Capture Unit',
+    position: [18.7606, 73.8625],
+    captureRate: 360,
+    cost: 135000,
+    maintenanceCost: 16500,
+    coverage: 160,
     active: true
   },
   {
-    id: 'roadside-1',
+    id: 'pune-pcmc-green-wall',
+    type: 'vertical-garden',
+    name: 'PCMC Bhosari Green Wall',
+    position: [18.6436, 73.8334],
+    captureRate: 160,
+    cost: 55000,
+    maintenanceCost: 9000,
+    coverage: 230,
+    active: true
+  },
+  {
+    id: 'pune-kharadi-green-corridor',
+    type: 'vertical-garden',
+    name: 'Kharadi Green Corridor',
+    position: [18.5510, 73.9436],
+    captureRate: 150,
+    cost: 50000,
+    maintenanceCost: 9500,
+    coverage: 210,
+    active: true
+  },
+  {
+    id: 'pune-magarpatta-capture',
     type: 'roadside-capture',
-    name: 'Roadside CO₂ Capture Unit',
-    position: [40.7615, -73.9780],
+    name: 'Magarpatta CO₂ Capture Unit',
+    position: [18.5150, 73.9270],
     captureRate: 300,
     cost: 125000,
-    maintenanceCost: 15000,
+    maintenanceCost: 15500,
     coverage: 150,
+    active: true
+  },
+
+  // Mumbai anchor
+  {
+    id: 'marine-drive-green-wall',
+    type: 'vertical-garden',
+    name: 'Marine Drive Vertical Garden',
+    position: [18.9340, 72.8238],
+    captureRate: 130,
+    cost: 47000,
+    maintenanceCost: 8200,
+    coverage: 200,
     active: true
   }
 ];
+
+
 
 // Generate mock grid data for heatmap
 export const generateMockGridData = (
